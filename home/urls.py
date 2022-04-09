@@ -13,5 +13,10 @@ urlpatterns = [
     path("items", views.items, name='items'),
     path("checkout", views.checkout, name='checkout'),
     path("product/<int:myid>", views.productView, name='ProductView'),
-    path("Category", views.category, name="category"),
+    path("Category", views.category, name="Category"),
+    path("category/furnishing", views.category_furnishing, name="furnishing"),
+    path("category/Lighting", views.category_lighting, name="category_lighting"),
+    path("category/Walls_&_Floor", views.category_wf,
+         name="category_Walls_Floor"),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

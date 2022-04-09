@@ -110,7 +110,22 @@ def productView(request, myid):
 
 
 def category(request):
-    pass
+    return render(request, 'Category.html')
 
     # username=kapil
     # password=kap@123il
+
+
+def category_furnishing(request):
+    Prod = Product.objects.filter(category=str("Furnishing"))
+    return render(request, 'sub_category.html', {'product': Prod})
+
+
+def category_lighting(request):
+    Prod = Product.objects.filter(category=str("Lighting"))
+    return render(request, 'sub_category.html', {'product': Prod})
+
+
+def category_wf(request):
+    Prod = Product.objects.filter(category=str("Walls & Floor"))
+    return render(request, 'sub_category.html', {'product': Prod})

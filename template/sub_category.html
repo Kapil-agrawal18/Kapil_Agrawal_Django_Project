@@ -1,0 +1,36 @@
+{% extends "base2.html" %}
+{% block title %}Home|{% endblock title %}
+	
+{% block Headers %}
+
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+
+	<style>
+		  
+    
+	</style>
+	{% endblock Headers %}
+
+	{% block body %}
+	<div class="row" style="margin-top:50px;">
+	{% for p in product %}
+	<div class="col-xs-3 col-sm-3 col-md-3">
+		
+		<div style="width: 18rem;">
+			<img src='/media/{{p.image}}' class="card-img-top" alt="...">
+			<div class="card-body">
+				<h5 class="card-title" id="namepr{{p.id}}">{{p.product_name}}</h5>
+				<p class="card-text"><b>Rs.</b>{{p.price}}</p>
+			</div>
+		</div>
+		
+		
+	</div>
+	{% endfor %}
+</div>
+	
+	
+    {% endblock body%}
